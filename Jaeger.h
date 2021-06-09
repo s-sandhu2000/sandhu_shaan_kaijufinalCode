@@ -14,21 +14,17 @@ class Jaeger : public gameObj {
        velocity = vec2(-1, 0);
     }
 
-    vec2 getLocation() const { return position; }
-    std::string getName() const { return name; }
-    int getSize() const { return size; }
-    double getPower() const { return power; }
+    double getHealth() const { return power; }
     //life can never be less than 0 - maybe able to sheild (roll dice)
-    void takeHit(double damage) { if (niceRand() > 0.5) power = fmax(0.0, power - damage); }
+    void takeHit(double damage) override{
+      if (niceRand() > 0.5) power = fmax(0.0, power - damage);
+    }
     std::string getPilot1() const { return pilot1; }
     std::string getPilot2() const { return pilot2; }
 
     void updatePos() { position += velocity;}
-
+    void accept(class Visitor &v) override;
   private:
-    vec2 position;
-    int size;
-    std::string name;
     vec2 velocity;
     double power;
     std::string pilot1;

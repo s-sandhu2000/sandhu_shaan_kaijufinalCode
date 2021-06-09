@@ -12,22 +12,17 @@ class Kaiju : public gameObj {
        this->superPower = superPower;
 	}
 
-	vec2 getLocation() const { return position; }
-	std::string getName() const { return name; }
-	int getSize()const  { return size; }
-
   double getHealth() const { return life; }
   //life can never be less than 0
-  void takeHit(double damage) { life = fmax(0.0, life - damage); }
+  void takeHit(double damage) override{
+    life = fmax(0.0, life - damage);
+  }
   std::string getPower() const { return superPower; }
 
   void updatePos(vec2 vel) { position += vel; }
-
+  void accept(class Visitor &v) override;
 
   private:
-    vec2 position; //creature position
-    int size; //creature size
-    std::string name; //creature name
     double life; //percentage of ‘health’
     std::string superPower;
 };
