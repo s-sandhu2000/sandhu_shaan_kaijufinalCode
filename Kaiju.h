@@ -4,7 +4,7 @@
 
 #include "gameObj.h"
 
-
+class Visitor;
 class Kaiju : public gameObj {
   public:
     Kaiju(vec2 start, int size, std::string name, std::string superPower): gameObj{start, size, name} {

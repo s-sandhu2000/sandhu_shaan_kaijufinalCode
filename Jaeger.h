@@ -4,14 +4,14 @@
 #include "util.h"
 #include "vec2.h"
 #include "gameObj.h"
-
+class Visitor;
 class Jaeger : public gameObj {
   public:
     Jaeger(vec2 start, int size, std::string name, std::string pilotN1, std::string pilotN2) : gameObj{start, size, name}{
        this->power = 2.0;
        this->pilot1 = pilotN1;
        this->pilot1 = pilotN2;
-       velocity = vec2(-1, 0);
+       velocity = vec2(0, 0);
     }
 
     double getHealth() const { return power; }

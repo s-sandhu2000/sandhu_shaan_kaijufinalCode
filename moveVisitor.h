@@ -9,15 +9,17 @@ class moveVisitor: public Visitor {
     public:
         moveVisitor() {}
         void visit(Kaiju *e) {
-            vel_x = niceRand();
-            vel_y = niceRand();
+           double vel_x = niceRand();
+           double vel_y = niceRand();
             e->updatePos(vec2(vel_x,vel_y));
 
         }
         void visit(Jaeger *e) {
+            double current =
+            double next =
             e->updatePos();
         }
-}
+};
 
 #endif
 

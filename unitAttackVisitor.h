@@ -12,7 +12,7 @@ class unitAttackVisitor: public Visitor {
             std::cout << "dealing one damage to Kaiju" << std::endl;
         }
         void visit(Jaeger *e) {
-            if(niceRand > 0.2)
+            if(niceRand() > 0.2)
             {
                 e->takeHit(1.0);
                 std::cout << "dealing one damage to Jaeger" << std::endl;
@@ -22,7 +22,7 @@ class unitAttackVisitor: public Visitor {
             }
 
         }
-}
+};
 
 #endif
 

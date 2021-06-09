@@ -19,6 +19,7 @@ public:
     int getSize() const { return size; }
 
     virtual void takeHit(double damage)= 0;
+    virtual void accept(class Visitor &v) = 0;
     virtual double getHealth() const {return 0;}
 protected:
     vec2 position;

@@ -1,6 +1,6 @@
-#include "visitor.h"
 #include "Kaiju.h"
-void Kaiju::accept(class Visitor &v)
+#include "visitor.h"
+void Kaiju::accept(class Visitor &v) //override
 {
     v.visit(this);
 }

@@ -1,6 +1,6 @@
-#include "visitor.h"
 #include "Jaeger.h"
-void Jaeger::accept(class Visitor &v)
+#include "visitor.h"
+void Jaeger::accept(class Visitor &v) //override
 {
     v.visit(this);
 }

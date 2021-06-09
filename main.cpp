@@ -1,5 +1,5 @@
-#include <iostream> 
-#include <vector> 
+#include <iostream>
+#include <vector>
 #include <map>
 #include <algorithm>
 #include <climits>
@@ -8,11 +8,10 @@
 #include "Jaeger.h"
 #include "Kaiju.h"
 #include "gameObj.h"
-//Uncomment when ready
-//#include "unitAttackVisitor.h"
-//#include "moveVisitor.h"
-  
-using namespace std; 
+#include "unitAttackVisitor.h"
+#include "moveVisitor.h"
+
+using namespace std;
 
 /* helper function for distance - friend to vec2 */
 inline float distance(const vec2 &a, const vec2 &b) {
@@ -20,7 +19,7 @@ inline float distance(const vec2 &a, const vec2 &b) {
 }
 
 
-int main() { 
+int main() {
 
  	vector< shared_ptr<gameObj> > somePlayers;
 
@@ -36,8 +35,8 @@ int main() {
 
     //create two different types of visitors
     //Uncomment when ready
-    //unitAttackVisitor oneHit;
-    //moveVisitor move;
+    unitAttackVisitor oneHit;
+    moveVisitor move;
 
     //print initial Kaiju positions
     cout << "start: " << endl;
@@ -50,7 +49,7 @@ int main() {
 
       cout << "**round " << i << endl;
 
-      /* Uncomment when ready
+      //  Uncomment when ready
 
       //move Jager and Kaijus
       robot->accept(move);
@@ -61,7 +60,7 @@ int main() {
       }
 
       //find the closest Kaiju
-      double minD = LONG_MAX; 
+      double minD = LONG_MAX;
       shared_ptr<gameObj> closest = nullptr;
       //find the closest Kaiju and call visit on it
       for (auto e: somePlayers) {
@@ -78,8 +77,8 @@ int main() {
       }
 
       //Jaeger always takes a hit (but can sheild)
-      robot->accept(oneHit); 
-      */
+      robot->accept(oneHit);
+
     }
 
     //sort the Kaiju by health
