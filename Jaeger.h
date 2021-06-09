@@ -24,6 +24,8 @@ class Jaeger : public gameObj {
 
     void updatePos() { position += velocity;}
     void accept(class Visitor &v) override;
+    void updateVelocity(vec2 v){velocity = v;}
+    vec2 getVelocity() const {return velocity;};
   private:
     vec2 velocity;
     double power;
