@@ -26,13 +26,13 @@ class Jaeger : public gameObj {
     void updatePos() { position += velocity;}
 
   private:
-    vec2 position; 
-    int size; 
+    vec2 position;
+    int size;
     std::string name;
-    vec2 velocity; 
+    vec2 velocity;
     double power;
     std::string pilot1;
-    std::string pilot2; 
+    std::string pilot2;
 };
 
 #endif
