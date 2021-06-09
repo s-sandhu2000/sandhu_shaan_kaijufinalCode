@@ -1,7 +1,7 @@
 #ifndef GAMEOBJ_H
 #define GAMEOBJ_H
 
-#include <iostream> 
+#include <iostream>
 #include <algorithm>
 #include "util.h"
 #include "vec2.h"
@@ -17,13 +17,13 @@ public:
     vec2 getLocation() const { return position; }
     std::string getName() const { return name; }
     int getSize() const { return size; }
-    
+
     virtual void takeHit(double damage)= 0;
     virtual double getHealth() const {return 0;}
-private:
-    vec2 position; 
-    int size; 
-    std::string name; 
+protected:
+    vec2 position;
+    int size;
+    std::string name;
 };
 
 #endif
